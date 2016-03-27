@@ -50,7 +50,10 @@ def drawEllipse(im, xCenter, yCenter, xRadius, yRadius, phi):
     draw.point(ellipsePts,fill=255)
     return im
 
-#def drawEllipseForWall
-    #for any two points, draw ellipse
+def drawPath(im,path):
+    draw = ImageDraw.Draw(im)
+    for i in range(len(path)-1):
+        draw.line((path[i][0],path[i][1],path[i+1][0],path[i+1][1]),fill=255)
+    return im
 
 #def draw
