@@ -18,7 +18,7 @@ def drawConfig(confDict):
     for level in walls:
         for wall in walls[level]:
             draw.line((walls[level][wall]["start"]["x"],walls[level][wall]["start"]["y"],
-                   walls[level][wall]["end"]["x"],walls[level][wall]["end"]["y"], fill=255)
+                   walls[level][wall]["end"]["x"],walls[level][wall]["end"]["y"]), fill=255)
 
     return im
 
@@ -54,9 +54,3 @@ def drawEllipse(im, xCenter, yCenter, xRadius, yRadius, phi):
     #for any two points, draw ellipse
 
 #def draw
-
-config = loadConfig("config.json")
-
-configIm = drawConfig(config)
-imWithEllipse = drawEllipse(configIm,100,100,40,20,1)
-imWithEllipse.show()
