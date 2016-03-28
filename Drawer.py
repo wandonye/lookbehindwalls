@@ -9,9 +9,9 @@ from math import pi, cos, sin
 from collections import defaultdict
 import matplotlib.pyplot as plt
 
-def drawConfig(confDict):
-
-    im = Image.new('L', (400, 400))
+def drawConfig(confDict,im=None):
+    if im==None:
+        im = Image.new('L', (400, 400))
     draw = ImageDraw.Draw(im)
     walls = confDict["walls"]
 
@@ -43,10 +43,9 @@ def findEllipsePts(xCenter, yCenter, xRadius, yRadius, phi):
     return ellipsePts
 
 def drawEllipse(im, xCenter, yCenter, xRadius, yRadius, phi):
-
-    draw = ImageDraw.Draw(im)
     ellipsePts = findEllipsePts(xCenter, yCenter, xRadius, yRadius, phi)
 
+    draw = ImageDraw.Draw(im)
     draw.point(ellipsePts,fill=255)
     return im
 
