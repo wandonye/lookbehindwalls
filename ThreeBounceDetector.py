@@ -8,7 +8,7 @@ from PIL import ImageDraw, Image
 from pylab import cm
 import numpy as np
 
-config = loadConfig("config2.json")
+config = loadConfig("config1.json")
 know_env = copy.deepcopy(config)
 del know_env["walls"]["level 2"]
 del know_env["walls"]["level 3"]
@@ -52,7 +52,7 @@ M = max(voter.values())
 im = Image.fromarray(cm.gist_earth(density/M, bytes=True))
 im = drawConfig(config,im)
 im.show()
-im.save("examples/exampe3.png")
+im.save("examples/exampe2.png")
 
 threshold = M*0.7
 highVotePts = [(int(k.split()[0]),int(k.split()[1])) for k, v in voter.items() if v > threshold]

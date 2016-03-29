@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\usepackage{amsfonts,amsmath,amsthm,amssymb,amsbsy,color}
+\usepackage{pgfplots}
+%
+\renewcommand{\baselinestretch}{1}
+\topmargin=-0.5truein
+\textheight=9.0truein
+\oddsidemargin=0.0truein
+\textwidth=6.5truein
+%
+\pagestyle{empty}
+\def \R{\mathbb R}
+\def \E{\mathbb E}
+\def \bmu{\boldsymbol \mu}
+\def \P{\mathbb P}
+\def \bX{\mbox{\boldmath$X$}}
+\def \bx{\boldsymbol x}
+\def \bI{\boldsymbol I}
+\def \bSigma{\boldsymbol \Sigma}
+\def \hypo{\mbox{${\Huge {{}^{{}^{H_1}_{ \, >}}_{{}^{ \, <}_{H_0}}}}$}}
+
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
+% Solutions use a modified proof environment
+\newenvironment{solution}
+               {\let\oldqedsymbol=\qedsymbol
+                \renewcommand{\qedsymbol}{$\blacktriangleleft$}
+                \begin{proof}[\bfseries\upshape Solution]}
+               {\end{proof}
+                \renewcommand{\qedsymbol}{\oldqedsymbol}}
+
+
+\pagestyle{empty}
+\begin{document}
+
+\begin{center} {\Large
+{\bf 766 Project}}
+\end{center}
+\begin{enumerate}
+
+
+\item Compute the probability:
+$$
+P[Intersect\ at\ (x,y)|(X,Y)]
+$$
+$$
+CA+AX+XT+TY+YB+BC=d, CA'+AX'+XT+TY+YB+BC=d?
+$$
+
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, domain=0:30, samples=100,
+  axis lines*=left, xlabel=$x$, ylabel=$y$,
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=5cm, width=14cm,
+  xtick={14.67,17.23}, ytick=\empty,
+  enlargelimits=false, clip=false, axis on top,
+  grid = major
+  ]
+  \addplot [fill=cyan!20, draw=none, domain=0:15.62] {gauss(17.23,3.36)} \closedcycle;
+  \addplot [very thick,cyan!50!black] {gauss(14.67,3.76)};
+  \addplot [very thick,cyan!50!black] {gauss(17.23,3.36)};
+
+
+%\draw [yshift=-0.6cm, latex-latex](axis cs:4,0) -- node [fill=white] {$1.96\sigma$} (axis cs:5.96,0);
+\end{axis}
+
+\end{tikzpicture}
+
+\end{enumerate}
+
+
+\end{document}
