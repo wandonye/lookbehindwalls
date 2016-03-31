@@ -14,3 +14,4 @@
   5. reweight some ellipse
   6. ??higher resolution?
   7. prove 1-1 correspondence / find key quantity.
+  8. signals
