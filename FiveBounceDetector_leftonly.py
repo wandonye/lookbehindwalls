@@ -22,7 +22,7 @@ density = np.zeros((400,400))
 fociList = [((175,210),(200,210)),((190,210),(220,210))]
 tilt = 0
 discrete_spots = [(config["walls"]["level 2"]["wall 2"]["start"]["x"],y) for y in range(config["walls"]["level 2"]["wall 2"]["start"]["y"],config["walls"]["level 2"]["wall 2"]["end"]["y"],5)]
-discrete_spots += [(config["walls"]["level 2"]["wall 3"]["start"]["x"],y) for y in range(config["walls"]["level 2"]["wall 3"]["start"]["y"],config["walls"]["level 2"]["wall 3"]["end"]["y"],5)]
+
 print(discrete_spots)
 
 for t in range(5):
