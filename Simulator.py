@@ -155,7 +155,7 @@ def kBounceIntoCamAimed(config,n,shoot_pt,observe_pt):
 def travelDist(path):
     d = 0
     for i in range(len(path)-1):
-        d += sqrt(pow(path[i][0]-path[i+1][0],2),pow(path[i][1]-path[i+1][1],2))
+        d += sqrt(pow(path[i][0]-path[i+1][0],2)+pow(path[i][1]-path[i+1][1],2))
     return d
 
 def unobservedTravelDist(path):

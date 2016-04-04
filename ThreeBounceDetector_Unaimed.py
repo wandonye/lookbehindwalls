@@ -57,7 +57,7 @@ M = max(voter.values())
 im = Image.fromarray(cm.gist_earth(density/M, bytes=True))
 im = drawConfig(config,im)
 im.show()
-im.save("examples/unaimed_example.png")
+im.save("examples/unaimed_example2.png")
 
 threshold = M*0.7
 highVotePts = [(int(k.split()[0]),int(k.split()[1])) for k, v in voter.items() if v > threshold]
