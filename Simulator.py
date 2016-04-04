@@ -165,7 +165,7 @@ def unobservedTravelDist(path):
     return d
 
 if __name__ == "__main__":
-    config = loadConfig("config.json")
+    config = loadConfig("config3_leftonly.json")
     im = drawConfig(config)
 
     randpt1 = (randint(config["walls"]["level 1"]["wall 1"]["start"]["x"],config["walls"]["level 1"]["wall 1"]["end"]["x"]),config["walls"]["level 1"]["wall 1"]["start"]["y"])

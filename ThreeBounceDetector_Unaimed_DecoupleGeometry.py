@@ -33,7 +33,7 @@ discrete_spots = [(x,config["walls"]["level 1"]["wall 1"]["start"]["y"]) for x i
 print(discrete_spots)
 ellip_dict = defaultdict(int)
 
-for t in range(20):
+for t in range(10):
     randpt1 = (randint(config["walls"]["level 1"]["wall 1"]["start"]["x"],config["walls"]["level 1"]["wall 1"]["end"]["x"]),config["walls"]["level 1"]["wall 1"]["start"]["y"])
     randpt2 = (randint(config["walls"]["level 1"]["wall 1"]["start"]["x"],config["walls"]["level 1"]["wall 1"]["end"]["x"]),config["walls"]["level 1"]["wall 1"]["start"]["y"])
     print("shooting: ", randpt1)
@@ -65,7 +65,7 @@ for t in range(20):
                                 longAxis/2,sqrt(b2)/2,
                                 tilt)
 
-                    if ellip_dict[ellip_id]<1:
+                    if ellip_dict[ellip_id]<2:
                         ellip_dict[ellip_id] += 1
                         for pt in pts:
                             if pt[0]>-1 and pt[0]<400 and pt[1]>-1 and pt[1]<400:

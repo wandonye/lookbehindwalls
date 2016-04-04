@@ -54,5 +54,3 @@ def drawPath(im,path):
     for i in range(len(path)-1):
         draw.line((path[i][0],path[i][1],path[i+1][0],path[i+1][1]),fill=255)
     return im
-
-#def draw
