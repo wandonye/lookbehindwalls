@@ -9,7 +9,7 @@ from pylab import cm
 import numpy as np
 import datetime
 
-config = loadConfig("config3_leftonly.json")
+config = loadConfig("config.json")
 know_env = copy.deepcopy(config)
 del know_env["walls"]["level 3"]
 know_Im = drawConfig(know_env)
